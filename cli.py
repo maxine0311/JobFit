@@ -75,6 +75,8 @@ def cmd_ask(args) -> None:
 
 
 def main() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="JobFit - 求职搜索 + 学习规划助手")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
